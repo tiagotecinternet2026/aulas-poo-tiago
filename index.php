@@ -13,6 +13,9 @@ $pedido2 = new Pedido(1002, "Beltrano Souza", StatusPedido::Pendente);
 $pedido3 = new Pedido(1003, "José da Silva", StatusPedido::AguardandoPagamento);
 $pedido4 = new Pedido(1004, "Mônica Santos", StatusPedido::SaiuParaEntrega);
 
+// Alterando o status de acordo com as opções válidas da Enum
+$pedido3->setStatus(StatusPedido::Pago);
+
 $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
 ?>
 <!DOCTYPE html>
@@ -33,10 +36,21 @@ $pedidos = [$pedido1, $pedido2, $pedido3, $pedido4];
             <p>Cada pedido possui um status: Pendente, Aguardando pagamento, Em preparação, Pago ou Saiu para entrega</p>
         </header>
 
-        <div class="conteudos">        
+        <div class="conteudos">      
+        <?php foreach($pedidos as $pedido): ?>
             <article class="card-conteudo">
-                
+                <h2>Pedido #<?= $pedido->getNumero() ?> </h2>
+                <p>Cliente: <?= $pedido->getCliente() ?> </p>
+                <p>Status: 
+                    <!-- Atenção ao uso necessário do value para mostrar os valores -->
+                    <b class="destaque"> <?= $pedido->getStatus()->value ?> </b>
+                </p>
+        <?php 
+        $mensagem = 'Seu pedido #'.$pedido->getNumero().' está com o status: '.$pedido->getStatus()->value;
+        ?>
+                <p><small> <?= $notificadorPorEmail->enviar($mensagem) ?></small></p>
             </article>
+        <?php endforeach; ?>            
         </div>
 
         <hr>               
