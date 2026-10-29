@@ -16,6 +16,13 @@ $emailPedido2 = $notificadorPorEmail->enviar("Seu pedido 789xyz foi confirmado!"
 // Pedido 456asd
 $emailPedido3 = $notificadorPorEmail->enviar("Seu pedido 456asd foi confirmado!");
 
+/* *********** */
+$notificadorPorEmailTeste2 = new NotificadorEmail();
+$notificadorPorEmailTeste3 = new NotificadorEmail();
+
+$notificadorPorEmailTeste2->enviar("Pedidos entregues!");
+$notificadorPorEmailTeste3->enviar("Pedidos à espera de avaliação");
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
