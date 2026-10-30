@@ -1,11 +1,14 @@
 <?php 
-require_once "src/StatusPedido.php"; // a Enumeração DEVE vir primeiro
-require_once "src/Pedido.php"; // pois a classe Pedido precisa dela
+// Atualizamos os caminhos físicos (pasta/arquivo.php)
+require_once "src/Pedidos/StatusPedido.php"; 
+require_once "src/Pedidos/Pedido.php"; 
+require_once "src/Notificacoes/Notificador.php"; 
+require_once "src/Notificacoes/NotificadorEmail.php"; 
 
-require_once "src/Notificador.php"; 
-require_once "src/NotificadorEmail.php"; 
-
-$notificadorPorEmail = new NotificadorEmail();
+// Veja que nessa primeira forma, precisamos passar o nome completo da classe
+$notificadorPorEmail = new App\Notificacoes\NotificadorEmail();
+var_dump($notificadorPorEmail);
+die();
 
 /* Repare no terceiro parâmetro: é OBRIGATÓRIO usar uma das opções definidas na Enum. */
 $pedido1 = new Pedido(1001, "Fulano da Silva", StatusPedido::Pendente);
