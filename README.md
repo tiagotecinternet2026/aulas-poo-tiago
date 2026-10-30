@@ -6,6 +6,20 @@ Os assuntos e exemplos estão divididos por `branches`, acessíveis pelo menu de
 
 ---
 
+## Branch 10: Composer e Autoload
+
+- Composer: gerenciador de dependências para PHP; aqui utilizamos apenas o recurso de autoload
+- Configuração do autoload no composer.json
+- PSR-4: diretriz que determina a relação entre namespaces e diretórios para o autoload
+- Mapeamento do namespace App\ para a pasta src/
+- Geração do autoload com composer dump-autoload
+- Carregamento do autoload na index.php usando um único require_once apontando para vendor/autoload.php
+- Teste: criação da classe Saudacao com carregamento automático via autoload
+- composer install: instala dependências e gera arquivos do autoload (desde que você tenha o composer.json)
+- Lembrete: a pasta vendor não precisa ser versionada pelo Git. Por isso, a colocamos no .gitignore
+
+---
+
 ## Branch 09: Namespaces
 
 - Reorganização dos arquivos em pastas dentro de src
