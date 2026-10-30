@@ -6,6 +6,17 @@ Os assuntos e exemplos estão divididos por `branches`, acessíveis pelo menu de
 
 ---
 
+## Branch 09: Namespaces
+
+- Reorganização dos arquivos em pastas dentro de src
+- Declaração do namespace e do subnamespace em cada arquivo
+- Utilização do nome completo de um recurso: App\Pedidos\Pedido
+- Importação do namespace com use para utilizar nomes simples
+- Criação de apelidos com as para solucionar conflitos de nomes
+- Lembrete: use importa namespaces; require_once carrega arquivos
+
+---
+
 ## Branch 08: Enumerações
 
 - Enumerações com um conjunto definido de opções usando case
