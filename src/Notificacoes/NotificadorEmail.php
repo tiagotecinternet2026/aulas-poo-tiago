@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Notificacoes;
 
 class NotificadorEmail implements Notificador
